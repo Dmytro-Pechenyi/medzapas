@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Каталог медичних товарів: ліки та медичні вироби — МедЗапас</title>
+    <meta
+      name="description"
+      content="Каталог МедЗапас: дві категорії медичних товарів і демонстраційні картки з описом та одиницею виміру. Усі дані навчальні."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header-content">
+        <a class="logo" href="index.html">Мед<span>Запас</span></a>
+
+        <nav class="navigation">
+          <a href="index.html">Головна</a>
+          <a href="catalog.html" class="active">Каталог</a>
+          <a href="articles.html">Статті</a>
+          <a href="about.html">Про сайт</a>
+          <a href="contacts.html">Контакти</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header">
+        <div class="container">
+          <div class="breadcrumbs">
+            <a href="index.html">Головна</a> ›
+            <span>Каталог</span>
+          </div>
+
+          <h1>Каталог медичних товарів</h1>
+
+          <p class="lead">
+            Переглядайте медичні товари, шукайте їх за назвою та фільтруйте за
+            категоріями.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2>Усі товари</h2>
+
+          <div class="catalog-controls">
+            <div class="control-field">
+              <label for="searchInput">Пошук за назвою</label>
+              <input
+                type="search"
+                id="searchInput"
+                placeholder="Наприклад, Парацетамол"
+              />
+            </div>
+
+            <div class="control-field">
+              <label for="categoryFilter">Категорія</label>
+              <select id="categoryFilter">
+                <option value="">Усі категорії</option>
+                <option value="medicines">Лікарські засоби</option>
+                <option value="devices">Вироби медичного призначення</option>
+              </select>
+            </div>
+
+            <div class="control-field">
+              <label for="sortSelect">Сортування</label>
+              <select id="sortSelect">
+                <option value="asc">За назвою: А–Я</option>
+                <option value="desc">За назвою: Я–А</option>
+              </select>
+            </div>
+          </div>
+
+          <p id="resultsCount" aria-live="polite">Завантаження товарів...</p>
+
+          <div class="table-wrap">
+            <table class="product-table">
+              <thead>
+                <tr>
+                  <th>Назва</th>
+                  <th>Категорія</th>
+                  <th>Форма</th>
+                  <th>Дозування</th>
+                  <th>Одиниця виміру</th>
+                </tr>
+              </thead>
+              <tbody id="productTableBody"></tbody>
+            </table>
+          </div>
+
+          <p id="catalogMessage" role="status"></p>
+
+          <div id="pagination" class="pagination"></div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/catalog.js"></script>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <a class="logo footer-logo" href="index.html">Мед<span>Запас</span></a>
+        <p>Інформаційний каталог медичних товарів.</p>
+        <p class="copyright">© 2026 МедЗапас</p>
+        <p>Creator: dmytro.pechenyi@nure.ua</p>
+      </div>
+    </footer>
+  </body>
+</html>
